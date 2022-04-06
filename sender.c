@@ -1,5 +1,6 @@
 #include <string.h>
 #include "sender.h"
+#include <cstdio>
 
 // Declare the file pointer
 FILE *filePointer ;
