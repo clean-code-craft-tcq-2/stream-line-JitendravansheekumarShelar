@@ -41,10 +41,10 @@ int isDataReadSuccessfully(char *filename)
 int readData()
 {
     //everytime function is called buffer is initialized to 0
-    dataBuffer[BUFFER_SIZE] = {0}
+    dataBuffer[BUFFER_SIZE] = {0};
     float value;
     
-    for (index = 0; index < BUFFER_SIZE ; index++)
+    for (int index = 0; index < BUFFER_SIZE ; index++)
     {
         dataBuffer[index] = value;
     }
