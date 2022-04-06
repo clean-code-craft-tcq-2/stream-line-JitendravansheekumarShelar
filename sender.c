@@ -28,7 +28,7 @@ int isFileOpenSuccessfully()
 
 int isDataReadSuccessfully()
 {
-    reutrn 1;
+    return 1;
 }
 
 int readData()
