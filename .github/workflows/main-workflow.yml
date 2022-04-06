@@ -1,4 +1,4 @@
-Name: Main workflow for build and run
+name: Main workflow for build and run
 
 on: [push, pull_request]
 
