@@ -11,29 +11,28 @@ FILE *filePointer ;
 // Declare data buffer
 float dataBuffer[BUFFER_SIZE] = {0};
 
-// Open the existing file Sensor1_Data.csv using fopen()
-// in read mode using "r" attribute
-filePointer = fopen("Sensor1_Data.csv", "r") ;
 
-int isFileOpenSuccessfully()
+int isFileOpenSuccessfully(char *filename)
 {
+    // Open the existing file Sensor1_Data.csv using fopen()
+    // in read mode using "r" attribute
+    filePointer = fopen(filename, "r") ;
+    
     // Check if this filePointer is null
     // which maybe if the file does not exist
     if ( filePointer == NULL )
     {
-        printf( "Sensor1_Data.csv file failed to open." ) ;
         return 0;
     }
     else
     {       
-        printf("The file is now opened.\n") ;
         return 1;
     }
 }
 
-int isDataReadSuccessfully()
+int isDataReadSuccessfully(char *filename)
 {
-    if(m_readDataFromAFile())
+    if(m_readDataFromAFile(filename))
         return 1;
     else
         return 0;
@@ -53,9 +52,9 @@ int readData()
     return index;
 }
 
-int m_readDataFromAFile()
+int m_readDataFromAFile(char * filename)
 {   
-    if(isFileOpenSuccessfully())
+    if(isFileOpenSuccessfully(filename))
     {
         return readData();
     }
