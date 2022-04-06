@@ -43,6 +43,7 @@ int readData()
     //everytime function is called buffer is initialized to 0
     dataBuffer[BUFFER_SIZE] = {0};
     float value;
+    int index_pos;
     
     for (int index_pos = 0; index_pos < BUFFER_SIZE ; index_pos++)
     {
