@@ -1,3 +1,3 @@
-#include <stdio.h>
+#include <cstdio.h>
 
 int m_readDataFromAFile();
