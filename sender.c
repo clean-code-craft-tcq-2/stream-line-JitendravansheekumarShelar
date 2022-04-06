@@ -5,7 +5,7 @@
 
 int m_readDataFromAFile()
 {
-    int totalReadingsCaptured = 0
+    int totalReadingsCaptured = 0;
     
     return totalReadingsCaptured;
 }
