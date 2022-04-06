@@ -44,12 +44,12 @@ int readData()
     dataBuffer[BUFFER_SIZE] = {0};
     float value;
     
-    for (int index = 0; index < BUFFER_SIZE ; index++)
+    for (int index_pos = 0; index_pos < BUFFER_SIZE ; index_pos++)
     {
-        dataBuffer[index] = value;
+        dataBuffer[index_pos] = value;
     }
     
-    return index;
+    return index_pos;
 }
 
 int m_readDataFromAFile(char * filename)
