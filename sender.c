@@ -3,8 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 50
+
 // Declare the file pointer
 FILE *filePointer ;
+
+// Declare data buffer
+float dataBuffer[BUFFER_SIZE] = {0};
 
 // Open the existing file Sensor1_Data.csv using fopen()
 // in read mode using "r" attribute
@@ -20,8 +25,7 @@ int isFileOpenSuccessfully()
         return 0;
     }
     else
-    {
-         
+    {       
         printf("The file is now opened.\n") ;
         return 1;
     }
@@ -29,12 +33,24 @@ int isFileOpenSuccessfully()
 
 int isDataReadSuccessfully()
 {
-    return 1;
+    if(m_readDataFromAFile())
+        return 1;
+    else
+        return 0;
 }
 
 int readData()
 {
-    return 50;
+    //everytime function is called buffer is initialized to 0
+    dataBuffer[BUFFER_SIZE] = {0}
+    float value;
+    
+    for (index = 0; index < BUFFER_SIZE ; index++)
+    {
+        dataBuffer[index] = value;
+    }
+    
+    return index;
 }
 
 int m_readDataFromAFile()
