@@ -5,9 +5,9 @@
 // Declare the file pointer
 FILE *filePointer ;
 
-// Open the existing file SensorData.csv using fopen()
+// Open the existing file Sensor1_Data.csv using fopen()
 // in read mode using "r" attribute
-filePointer = fopen("SensorData.csv", "r") ;
+filePointer = fopen("Sensor1_Data.csv", "r") ;
 
 int isFileOpenSuccessfully()
 {
@@ -15,7 +15,7 @@ int isFileOpenSuccessfully()
     // which maybe if the file does not exist
     if ( filePointer == NULL )
     {
-        printf( "SensorData.csv file failed to open." ) ;
+        printf( "Sensor1_Data.csv file failed to open." ) ;
         return 0;
     }
     else
