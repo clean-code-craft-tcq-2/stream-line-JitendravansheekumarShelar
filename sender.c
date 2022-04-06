@@ -45,7 +45,7 @@ int readData()
     float value;
     int index_pos;
     
-    for (int index_pos = 0; index_pos < BUFFER_SIZE ; index_pos++)
+    for (index_pos = 0; index_pos < BUFFER_SIZE ; index_pos++)
     {
         dataBuffer[index_pos] = value;
     }
