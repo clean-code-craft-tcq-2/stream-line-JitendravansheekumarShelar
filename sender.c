@@ -29,14 +29,6 @@ int isFileOpenSuccessfully(char *filename)
     }
 }
 
-int isDataReadSuccessfully(char *filename)
-{
-    if(m_readDataFromAFile(filename))
-        return 1;
-    else
-        return 0;
-}
-
 int readData(char * filename, float *Temperature, float *ChargeRate)
 {
     float Temp_data, ChargeRate_data;
