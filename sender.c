@@ -5,41 +5,18 @@
 
 #define BUFFER_SIZE 50
 
-// Declare data buffer
-float dataBuffer[BUFFER_SIZE] = {0};
-
-int isFileOpenSuccessfully(char *filename)
-{
-    // Declare the file pointer
-    FILE *filePointer ;
-    
-    // Open the existing file Sensor1_Data.csv using fopen()
-    // in read mode using "r" attribute
-    filePointer = fopen(filename, "r") ;
-    
+int isFileOpenSuccessfully(FILE *filePointer)
+{    
     // Check if this filePointer is null
     // which maybe if the file does not exist
-    if ( filePointer == NULL )
-    {
-        return 0;
-    }
-    else
-    {       
-        return 1;
-    }
+    return ( filePointer == NULL ) ? 0 : 1;
 }
 
-int readData(char * filename, float *Temperature, float *ChargeRate)
+
+int readData(FILE *filePointer, float *Temperature, float *ChargeRate)
 {
-    float Temp_data = 0, ChargeRate_data = 0;
+    float Temp_data = 0.0, ChargeRate_data = 0.0;
     int index_pos;
-    
-    // Declare the file pointer
-    FILE *filePointer ;
-    
-    // Open the existing file Sensor1_Data.csv using fopen()
-    // in read mode using "r" attribute
-    filePointer = fopen(filename, "r") ;
   
     for(index_pos=0; index_pos<BUFFER_SIZE; index_pos++)
     {
@@ -57,6 +34,13 @@ int readData(char * filename, float *Temperature, float *ChargeRate)
 }
 
 int m_readDataFromAFile(char * filename, float *Temperature, float *ChargeRate)
-{   
-    isFileOpenSuccessfully(filename) ? return readData(filename,Temperature,ChargeRate); : return 0;
+{  
+    // Declare the file pointer
+    FILE *filePointer ;
+    
+    // Open the existing file Sensor1_Data.csv using fopen()
+    // in read mode using "r" attribute
+    filePointer = fopen(filename, "r");
+    
+    return isFileOpenSuccessfully(filePointer) ? readData(filePointer,Temperature,ChargeRate) : 0;
 }
