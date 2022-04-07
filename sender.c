@@ -39,17 +39,15 @@ int isDataReadSuccessfully(char *filename)
 
 int readData(char * filename, float *Temperature, float *ChargeRate)
 {
+    float Temp_data, ChargeRate_data;
+    int index_pos;
+    
     // Declare the file pointer
     FILE *filePointer ;
     
     // Open the existing file Sensor1_Data.csv using fopen()
     // in read mode using "r" attribute
     filePointer = fopen(filename, "r") ;
-    
-    float Temp_data, ChargeRate_data;
-    float*Temperature;
-    float*ChargeRate;
-    int index_pos;
   
     for(index_pos=0; index_pos<BUFFER_SIZE; index_pos++)
     {
