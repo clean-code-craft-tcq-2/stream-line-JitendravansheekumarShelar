@@ -37,7 +37,7 @@ int isDataReadSuccessfully(char *filename)
         return 0;
 }
 
-int readData(char * filename)
+int readData(char * filename, float *Temperature, float *ChargeRate)
 {
     // Declare the file pointer
     FILE *filePointer ;
@@ -63,11 +63,11 @@ int readData(char * filename)
     return index_pos;
 }
 
-int m_readDataFromAFile(char * filename)
+int m_readDataFromAFile(char * filename, float *Temperature, float *ChargeRate)
 {   
     if(isFileOpenSuccessfully(filename))
     {
-        return readData(filename);
+        return readData(filename,Temperature,ChargeRate);
     }
     else
     {
