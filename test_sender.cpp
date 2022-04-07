@@ -16,6 +16,15 @@ TEST_CASE("Read Data from a File"){
   REQUIRE (totalReadingsCaptured == 50);
   }
 
+TEST_CASE("Read Data from a File 2"){
+  int totalReadingsCaptured = 0;
+  float Temperature[50]={0};
+  float ChargeRate[50]={0};
+  char *filename = "./Sensor1_Data.txt";
+  totalReadingsCaptured = m_readDataFromAFile(filename,&Temperature[0],&ChargeRate[0]);
+  REQUIRE (totalReadingsCaptured == 50);
+  }
+
 /*TEST_CASE("Whether data read successfully"){
   int isReadingSuccess = 0;
   char *filename = "./Sensor1_Data.txt";
