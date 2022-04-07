@@ -24,14 +24,14 @@ TEST_CASE("Read Data from a File"){
   }*/
 
 //Negative Scenarios
-TEST_CASE("Read Data from a not present File"){
+/*TEST_CASE("Read Data from a not present File"){
   int totalReadingsCaptured = 0;
   float Temperature;
   float ChargeRate;
   char *filename = "./SensorData.txt";
   totalReadingsCaptured = m_readDataFromAFile(filename,&Temperature,&ChargeRate);
   REQUIRE (totalReadingsCaptured == 0);
-  }
+  }*/
 
 /*TEST_CASE("When data is not available"){
   int isReadingSuccess = 0;
