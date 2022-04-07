@@ -31,7 +31,7 @@ int isFileOpenSuccessfully(char *filename)
 
 int readData(char * filename, float *Temperature, float *ChargeRate)
 {
-    float Temp_data, ChargeRate_data;
+    float Temp_data = 0, ChargeRate_data = 0;
     int index_pos;
     
     // Declare the file pointer
@@ -46,6 +46,7 @@ int readData(char * filename, float *Temperature, float *ChargeRate)
       fscanf(filePointer, "%f , %f \n", &Temp_data,&ChargeRate_data);
       *(Temperature + index_pos) = Temp_data;
       *(ChargeRate + index_pos) = ChargeRate_data;
+        printf("%f --- %f\n",Temp_data,ChargeRate_data);
     }
     
     fclose(filePointer);
