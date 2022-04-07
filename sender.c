@@ -46,22 +46,17 @@ int readData(char * filename, float *Temperature, float *ChargeRate)
       fscanf(filePointer, "%f , %f \n", &Temp_data,&ChargeRate_data);
       *(Temperature + index_pos) = Temp_data;
       *(ChargeRate + index_pos) = ChargeRate_data;
-        printf("%f --- %f\n",Temp_data,ChargeRate_data);
     }
     
     fclose(filePointer);
+    
+    /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
+    fprintf(stdin, "%d , %d\n",Temperature,ChargeRate);
     
     return index_pos;
 }
 
 int m_readDataFromAFile(char * filename, float *Temperature, float *ChargeRate)
 {   
-    if(isFileOpenSuccessfully(filename))
-    {
-        return readData(filename,Temperature,ChargeRate);
-    }
-    else
-    {
-        return 0;
-    }
+    if(isFileOpenSuccessfully(filename)) ? return readData(filename,Temperature,ChargeRate); : return 0;
 }
