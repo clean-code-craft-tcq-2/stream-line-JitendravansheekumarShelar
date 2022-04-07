@@ -9,10 +9,10 @@ using namespace std;
 //Positive Scenarios
 TEST_CASE("Read Data from a File"){
   int totalReadingsCaptured = 0;
-  float Temperature;
-  float ChargeRate;
+  float Temperature[50];
+  float ChargeRate[50];
   char *filename = "./Sensor1_Data.txt";
-  totalReadingsCaptured = m_readDataFromAFile(filename,&Temperature,&ChargeRate);
+  totalReadingsCaptured = m_readDataFromAFile(filename,&Temperature[0],&ChargeRate[0]);
   REQUIRE (totalReadingsCaptured == 50);
   }
 
