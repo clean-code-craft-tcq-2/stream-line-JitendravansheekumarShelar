@@ -53,7 +53,7 @@ int readData(char * filename)
   
     for(index_pos=0; index_pos<BUFFER_SIZE; index_pos++)
     {
-      fscanf(filePointer, "%f \t %f \n", &Temp_data,&ChargeRate_data);
+      fscanf(filePointer, "%f , %f \n", &Temp_data,&ChargeRate_data);
       *(Temperature + index_pos) = Temp_data;
       *(ChargeRate + index_pos) = ChargeRate_data;
     }
