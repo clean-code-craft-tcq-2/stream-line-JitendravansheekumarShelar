@@ -5,15 +5,17 @@
 
 #define BUFFER_SIZE 50
 
-// Declare the file pointer
-FILE *filePointer ;
-
 // Declare data buffer
 float dataBuffer[BUFFER_SIZE] = {0};
+
+FILE* fp = fopen("./BMS_DataParameter.txt","r");
 
 
 int isFileOpenSuccessfully(char *filename)
 {
+    // Declare the file pointer
+    FILE *filePointer ;
+    
     // Open the existing file Sensor1_Data.csv using fopen()
     // in read mode using "r" attribute
     filePointer = fopen(filename, "r") ;
@@ -38,17 +40,27 @@ int isDataReadSuccessfully(char *filename)
         return 0;
 }
 
-int readData()
+int readData(char * filename)
 {
-    //everytime function is called buffer is initialized to 0
-    dataBuffer[BUFFER_SIZE] = {0};
-    float value;
-    int index_pos;
+    // Declare the file pointer
+    FILE *filePointer ;
     
-    for (index_pos = 0; index_pos < BUFFER_SIZE ; index_pos++)
+    // Open the existing file Sensor1_Data.csv using fopen()
+    // in read mode using "r" attribute
+    filePointer = fopen(filename, "r") ;
+    
+    float Temp_data, ChargeRate_data;
+    float*Temperature;
+    float*ChargeRate;
+  
+    for(int i=0; i<BUFFER_SIZE; i++)
     {
-        dataBuffer[index_pos] = value;
+      fscanf(filePointer, "%f \t %f \n", &Temp_data,&ChargeRate_data);
+      *(Temperature + i) = Temp_data;
+      *(ChargeRate + i) = ChargeRate_data;
     }
+    
+    fclose(filePointer);
     
     return index_pos;
 }
@@ -57,7 +69,7 @@ int m_readDataFromAFile(char * filename)
 {   
     if(isFileOpenSuccessfully(filename))
     {
-        return readData();
+        return readData(filename);
     }
     else
     {
