@@ -49,8 +49,9 @@ int readData(char * filename)
     float Temp_data, ChargeRate_data;
     float*Temperature;
     float*ChargeRate;
+    int index_pos;
   
-    for(int index_pos=0; index_pos<BUFFER_SIZE; index_pos++)
+    for(index_pos=0; index_pos<BUFFER_SIZE; index_pos++)
     {
       fscanf(filePointer, "%f \t %f \n", &Temp_data,&ChargeRate_data);
       *(Temperature + index_pos) = Temp_data;
