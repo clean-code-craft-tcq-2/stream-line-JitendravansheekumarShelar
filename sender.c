@@ -8,9 +8,6 @@
 // Declare data buffer
 float dataBuffer[BUFFER_SIZE] = {0};
 
-FILE* fp = fopen("./BMS_DataParameter.txt","r");
-
-
 int isFileOpenSuccessfully(char *filename)
 {
     // Declare the file pointer
