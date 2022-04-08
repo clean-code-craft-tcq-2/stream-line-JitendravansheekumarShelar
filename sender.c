@@ -33,7 +33,7 @@ int readData(FILE *filePointer, float *Temperature, float *ChargeRate)
     return index_pos;
 }
 
-int m_readDataFromAFile(char * filename, float *Temperature, float *ChargeRate)
+int accessFileForDataExtraction(char * filename, float *Temperature, float *ChargeRate)
 {  
     // Declare the file pointer
     FILE *filePointer ;
