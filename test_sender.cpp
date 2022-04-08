@@ -7,7 +7,7 @@
 using namespace std;
 
 //Positive Scenarios
-TEST_CASE("Read Data from a File"){
+TEST_CASE("Read Sensor 1 Data"){
   int totalReadingsCaptured = 0;
   float Temperature[50]={0};
   float ChargeRate[50]={0};
@@ -16,7 +16,7 @@ TEST_CASE("Read Data from a File"){
   REQUIRE (totalReadingsCaptured == 50);
   }
 
-TEST_CASE("Read Data from a File"){
+TEST_CASE("Read Sensor 2 Data"){
   int totalReadingsCaptured = 0;
   float Temperature[50]={0};
   float ChargeRate[50]={0};
