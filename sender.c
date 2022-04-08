@@ -5,6 +5,7 @@
 
 #define BUFFER_SIZE 50
 
+//Requirement - 1
 int accessFileForDataExtraction(char * filename, float *Temperature, float *ChargeRate)
 {  
     // Declare the file pointer
@@ -17,6 +18,7 @@ int accessFileForDataExtraction(char * filename, float *Temperature, float *Char
     return isFileOpenSuccessfully(filePointer) ? readDataAndSendToConsole(filePointer,Temperature,ChargeRate) : 0;
 }
 
+//Requirement - 2
 int isFileOpenSuccessfully(FILE *filePointer)
 {    
     // Check if this filePointer is null
@@ -24,6 +26,7 @@ int isFileOpenSuccessfully(FILE *filePointer)
     return ( filePointer == NULL ) ? 0 : 1;
 }
 
+//Requirement - 3
 int readDataAndSendToConsole(FILE *filePointer, float *Temperature, float *ChargeRate)
 {
     float Temp_data = 0.0, ChargeRate_data = 0.0;
@@ -38,6 +41,7 @@ int readDataAndSendToConsole(FILE *filePointer, float *Temperature, float *Charg
     return sendDataToConsole(Temperature,ChargeRate);
 }
 
+//Requirement - 4
 int sendDataToConsole( float *Temperature, float *ChargeRate)
 {
     /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
