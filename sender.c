@@ -12,8 +12,14 @@ int isFileOpenSuccessfully(FILE *filePointer)
     return ( filePointer == NULL ) ? 0 : 1;
 }
 
+int sendDataToConsole( float *Temperature, float *ChargeRate)
+{
+    /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
+    fprintf(stdin, "%f , %f\n",Temperature,ChargeRate);    
+    return BUFFER_SIZE;
+}
 
-int readData(FILE *filePointer, float *Temperature, float *ChargeRate)
+int readDataAndSendToConsole(FILE *filePointer, float *Temperature, float *ChargeRate)
 {
     float Temp_data = 0.0, ChargeRate_data = 0.0;
     int index_pos;
@@ -27,10 +33,7 @@ int readData(FILE *filePointer, float *Temperature, float *ChargeRate)
     
     fclose(filePointer);
     
-    /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
-    fprintf(stdin, "%f , %f\n",Temperature,ChargeRate);
-    
-    return index_pos;
+    return sendDataToConsole(Temperature,ChargeRate);
 }
 
 int accessFileForDataExtraction(char * filename, float *Temperature, float *ChargeRate)
