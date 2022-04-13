@@ -27,5 +27,5 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
     printf("Temperature: %.2f, Charge Rate: %.2f \n", tempData[i], chargeRateData[i]);
     }
     printf("Unused Data\n");
-    printf("Unused data: %s\n", unusedData);
+    printf("Unused data: %f\n", unusedData);
 }
