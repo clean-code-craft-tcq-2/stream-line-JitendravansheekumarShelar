@@ -15,9 +15,6 @@ TEST_CASE("Test for Receiever to read from console")
     printf("Temperature: %.2f, Charge Rate: %.2f \n", expectedTempValue[i], expectedChargeRate[i]);
   }
   receiveDataFromConsole(temp,chargeRate);  
-//   printf("Print the received data from console\n");
-//   for(int i = 0; i<6; i++){
-//     printf("Temperature: %.2f, Charge Rate: %.2f \n", temp[i], chargeRate[i]);
-//   }
-  
+  REQUIRE(temp[0] == expectedTempValue[0]);
+  REQUIRE(chargeRate[0] == expectedChargeRate[0]); 
 }
