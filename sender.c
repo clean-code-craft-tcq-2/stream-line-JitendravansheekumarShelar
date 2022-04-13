@@ -45,7 +45,7 @@ int readDataAndSendToConsole(FILE *filePointer, float *Temperature, float *Charg
 int sendDataToConsole( float *Temperature, float *ChargeRate)
 {
     /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
-    fprintf(stdin, "%f , %f\n",Temperature,ChargeRate);    
+    fprintf(stdout, "%f , %f\n",Temperature,ChargeRate);    
     return BUFFER_SIZE;
 }
 
