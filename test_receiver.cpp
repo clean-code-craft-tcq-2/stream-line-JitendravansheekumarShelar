@@ -6,15 +6,26 @@
 
 TEST_CASE("Test for Receiever to read from console") 
 {
-  float temp[6] = {0};
-  float chargeRate[6] = {0};
-  float expectedTempValue[6] = {35, 33, 49, 46, 30, 37};
-  float expectedChargeRate[6] = {55, 60, 58, 52, 59, 51};
-  //printf("Print the data on console\n");
-//   for(int i = 0; i<6; i++){
-//     printf("Temperature: %.2f, Charge Rate: %.2f \n", expectedTempValue[i], expectedChargeRate[i]);
-//   }
+  float temp[50] = {0};
+  float chargeRate[50] = {0};
+  float expectedTempValue[50] = {0};
+  float expectedChargeRate[50] = {0};
   receiveDataFromConsole(temp,chargeRate);  
-  REQUIRE(temp[0] == expectedTempValue[0]);
-  REQUIRE(chargeRate[0] == expectedChargeRate[0]); 
+  
+  FILE * file= fopen("./batteryParameters.txt","r");                                                                  
+   for(int i = 0 ; i < 50; i++)
+   {
+     if (file!=NULL) 
+     {
+        for(int i=0;fscanf(file, "%f\t%f\n", &Temperature,&chargeRate)!=EOF ;i++)
+        {
+            expectedTempValue[i] = Temperature;
+            expectedChargeRate[i] = chargeRate;
+        }
+     }
+       
+     REQUIRE( (temp[i] - expectedTempValue[i]) <= 0.001);
+     REQUIRE( (chargeRate[i] - expectedChargeRate[i]) <= 0.001);
+   }
+   fclose(file);
 }
