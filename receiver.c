@@ -5,7 +5,7 @@
 
 #include "receiver.h"
 
-#define BUFFER_SIZE 50
+#define BUFFER_SIZE 6
 
 // Here we consider that the output printed on console (By sender) is of the type
 // Temperature: 31.342, Charge Rate: 0.413
