@@ -6,8 +6,8 @@
 
 TEST_CASE("Test for Receiever to read from console") 
 {
-  float temp[6] = 0;
-  float chargeRate[6] = 0;
+  float temp[6] = {0};
+  float chargeRate[6] = {0};
   float expectedTempValue[6] = {35, 33, 49, 46, 30, 37};
   float expectedChargeRate[6] = {55, 60, 58, 52, 59, 51};
   //printf("Print the data on console\n");
