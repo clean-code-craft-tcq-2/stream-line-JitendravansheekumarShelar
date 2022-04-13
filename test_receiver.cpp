@@ -17,10 +17,10 @@ TEST_CASE("Test for Receiever to read from console")
    {
      if (file!=NULL) 
      {
-        for(int i=0;fscanf(file, "%f\t%f\n", &Temperature,&chargeRate)!=EOF ;i++)
+        for(int i=0;fscanf(file, "%f\t%f\n", &Temperature,&chargeRateFromFile)!=EOF ;i++)
         {
             expectedTempValue[i] = Temperature;
-            expectedChargeRate[i] = chargeRate;
+            expectedChargeRate[i] = chargeRateFromFile;
         }
      }
        
