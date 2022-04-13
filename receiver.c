@@ -17,10 +17,11 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
             break;
         } 
         scanf("%f", &tempData[j]);
+        printf("%f\n", tempData[j]);        
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%f", &chargeRateData[j]);
-        printf("%f, %f\n", tempData[j], chargeRateData[j]);        
+        printf("%f\n", chargeRateData[j]);        
     }
 }
