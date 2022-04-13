@@ -16,13 +16,11 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
         {
             break;
         } 
-        scanf("%f", &tempData[j]);
-        printf("%f\n", tempData[j]);        
+        scanf("%f", &tempData[j]);     
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
-        scanf("%f", &chargeRateData[j]);
-        printf("%f\n", chargeRateData[j]);        
+        scanf("%f", &chargeRateData[j]);   
     }
     printf("Data received from console\n");
     for(int i = 0; i<6; i++){
