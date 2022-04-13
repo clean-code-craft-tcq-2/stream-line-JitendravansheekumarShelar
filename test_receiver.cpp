@@ -6,10 +6,12 @@
 
 TEST_CASE("Test for Receiever to read from console") 
 {
-  float temp[50] = {0};
-  float chargeRate[50] = {0};
   float expectedTempValue[50] = {0};
-  float expectedChargeRate[50] = {0};
+  float temp[50], chargeRate[50], expectedTempValue[50], expectedChargeRate[50]  = {0};
+//   float chargeRate[50] = {0};
+//   float expectedTempValue[50] = {0};
+//   float expectedChargeRate[50] = {0};
+  float Temperature, chargeRateFromFile;
   receiveDataFromConsole(temp,chargeRate);  
   
   FILE * file= fopen("./batteryParameters.txt","r");                                                                  
