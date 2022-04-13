@@ -25,5 +25,9 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
     printf("Data received from console\n");
     for(int i = 0; i<6; i++){
     printf("Temperature: %.2f, Charge Rate: %.2f \n", tempData[i], chargeRateData[i]);
-  }
+    }
+    printf("Unused Data\n");
+    for(int i = 0; i<6; i++){
+    printf("Unused data: %s\n", unusedData[i]);
+    }
 }
