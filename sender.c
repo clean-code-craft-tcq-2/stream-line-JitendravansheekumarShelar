@@ -44,8 +44,16 @@ int readDataAndSendToConsole(FILE *filePointer, float *Temperature, float *Charg
 //Requirement - 4
 int sendDataToConsole( float *Temperature, float *ChargeRate)
 {
-    /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
-    fprintf(stdout, "%f , %f\n",Temperature,ChargeRate);    
+    FILE *outputFile = stdout;
+    char buffer[200];
+    char *data = buffer;
+    for(int i = 0; i<BUFFER_SIZE;i++)
+        {
+        /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
+        sprintf(data, " {\"Temperature\": %.2f, \"ChargeRate\": %.2f}", Temperature[i], ChargeRate[i]);
+        fprintf(outputFile,"%s\n",data);
+        //fprintf(stdout, "%f , %f\n",Temperature,ChargeRate);   
+    }
     return BUFFER_SIZE;
 }
 
