@@ -3,6 +3,7 @@
 
 #include "test/catch.hpp"
 #include "receiver.h"
+#include <stdio.h>
 
 TEST_CASE("Test for Receiever to read from console") 
 {
