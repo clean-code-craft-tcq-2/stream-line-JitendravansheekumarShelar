@@ -13,7 +13,7 @@ TEST_CASE("Test for Receiever to read from console")
 //   float expectedChargeRate[50] = {0};
   float Temperature, chargeRateFromFile;
   receiveDataFromConsole(temp,chargeRate);  
-  
+  printf("Received data from Console");
   FILE * file= fopen("./Sensor1_Data.txt","r");                                                                  
    for(int i = 0 ; i < 50; i++)
    {
