@@ -50,7 +50,7 @@ int sendDataToConsole( float *Temperature, float *ChargeRate)
     for(int i = 0; i<BUFFER_SIZE;i++)
         {
         /* Every program you may run on the command line has 3 streams, STDIN, STDOUT and STDERR */
-        sprintf(data, " Temperature: %.2f deg C , State of Charge: %.2f\n", Temperature[i], ChargeRate[i]);
+        sprintf(data, " Temperature: %.2f, Charge Rate: %.2f\n", Temperature[i], ChargeRate[i]);
         fprintf(outputFile,"%s\n",data);
     }
     return BUFFER_SIZE;
