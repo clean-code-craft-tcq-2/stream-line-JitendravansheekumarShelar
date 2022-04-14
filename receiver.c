@@ -15,6 +15,7 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
     for(int j = 0; j < BUFFER_SIZE; j++){
         if(scanf("%50s", unusedData) == EOF) 
         {
+            printf("Printing data");
             break;
         } 
         scanf("%f", &tempData[j]);     
