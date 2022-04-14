@@ -22,6 +22,7 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%f", &chargeRateData[j]);
+        printf("Printing data");
         printf("%.2f \t %.2f\n",tempData[j],chargeRateData[j]);
     }
    
