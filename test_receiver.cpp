@@ -16,25 +16,3 @@ TEST_CASE("Test for Receiever to read from console")
   REQUIRE( (chargeRate[i] - expectedChargeRate[i]) <= 0.001);
   }
 }
-
-TEST_CASE("Test for Receiever to read from console and validate with File contents") 
-{
-  float temp[50], chargeRate[50], expectedTempValue[50], expectedChargeRate[50] = {0};
-  float Temperature, chargeRateFromFile;
-  receiveDataFromConsole(temp,chargeRate);                                                              
-
-  FILE * file= fopen("./Sensor1_Data.txt","r");                                                                  
-  if (file!=NULL) 
-  {
-     for(int i=0;fscanf(file, "%f\t%f\n", &Temperature,&chargeRateFromFile)!=EOF ;i++)
-        {
-            expectedTempValue[i] = Temperature;
-            expectedChargeRate[i] = chargeRateFromFile;
-            printf("The actual value for temp is %f and the expected value is %f\n", temp[i], expectedTempValue[i]);
-            printf("The actual value for charge rate is %f and the expected value is %f\n", chargeRate[i], expectedChargeRate[i]);
-//             REQUIRE( (temp[i] - expectedTempValue[i]) <= 0.001);
-//             REQUIRE( (chargeRate[i] - expectedChargeRate[i]) <= 0.001);
-        }
-   }
-   fclose(file);
-}
