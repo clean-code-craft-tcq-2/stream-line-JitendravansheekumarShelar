@@ -37,7 +37,7 @@ TEST_CASE("Test for Receiever to read from console and validate with File conten
      }
        
      REQUIRE( temp[i] - expectedTempValue[i]) <= 0.001);
-     REQUIRE( (chargeRate[i] - expectedChargeRate[i]) <= 0.001);
+     REQUIRE( chargeRate[i] - expectedChargeRate[i]) <= 0.001);
    }
    fclose(file);
 }
