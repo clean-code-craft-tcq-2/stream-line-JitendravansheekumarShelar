@@ -13,13 +13,13 @@ void printMinMaxValuesInStream(float* tempData, float* chargeRateData) {
     {
         if(tempData[j] < minTemp) {
             minTemp = tempData[j];
-        } else if(temperature[j]> maxTemp) {
+        } else if(tempData[j]> maxTemp) {
             maxTemp = tempData[j];
         }
 
         if(chargeRateData[j] < minChargeRate) {
             minChargeRate = chargeRateData[j];
-        } else if(stateOfCharge[j] > maxChargeRate) {
+        } else if(chargeRateData[j] > maxChargeRate) {
             maxChargeRate = chargeRateData[j];
         }
     }
