@@ -23,3 +23,14 @@ TEST_CASE("Test for Min and max values of battery parameters in the stream")
   receiveDataFromConsole(temp,chargeRate);                                                              
   printMinMaxValuesInStream(temp,chargeRate);
 }
+
+TEST_CASE("Test moving average computation") 
+{
+    float samples[5] = {1,3,5,6,9};
+    for (int i = 0; i < 4; i++)
+    {
+        REQUIRE(movingAverage(samples[i]) == -1 );
+    }
+    REQUIRE(movingAverage(samples[4]) == 1 );
+    
+}
