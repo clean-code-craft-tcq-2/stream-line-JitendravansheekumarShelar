@@ -57,6 +57,13 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%f", &chargeRateData[j]);
+        movingAverage(tempData[j]);
     }
    
+}
+
+void receiver(float* tempData, float* chargeRateData)
+{
+    receiveDataFromConsole(tempData, chargeRateData);
+    printMinMaxValuesInStream(tempData, chargeRateData);    
 }
