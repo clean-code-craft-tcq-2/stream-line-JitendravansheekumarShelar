@@ -1,0 +1,6 @@
+graph TD
+    A[Sensor 1] -->|send parameters| B(Access a file from where data will be extracted)
+    B --> C{Whether file can be open ?}
+    C -->|Yes| D[Read data from a file]
+    C -->|No| E[return 0 - Stop further process]
+    D --> F[Pass data to Console]
