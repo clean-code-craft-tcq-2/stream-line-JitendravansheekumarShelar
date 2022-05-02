@@ -26,6 +26,23 @@ void printMinMaxValuesInStream(float* tempData, float* chargeRateData) {
     printf("Minimum Temperature in the stream: %f Maximum Temperature in the stream: %f Minimum Charge Rate in the stream: %f Maximum Charge Rate in the stream: %f\n", minTemp, maxTemp, minChargeRate, maxChargeRate);
 }
 
+int movingAverage(float value) {
+    static int sampleSize = 0;
+    static float movingAverageArray[5] ={0};
+    movingAverageArray[sampleSize % 5] = value/5.0;
+    sampleSize++;
+    if (sampleSize >= 5)
+    {
+        float averageTemperature = movingAverageArray[0] +movingAverageArray[1] + movingAverageArray[2]+ movingAverageArray[3]+ movingAverageArray[4];
+        printf("Average Temperature: %f\n", averageTemperature);
+        return 1;
+        
+    } else{
+        return -1;
+    }
+    
+}
+
 // Here we consider that the output printed on console (By sender) is of the type
 // Temperature: 31.342, Charge Rate: 0.413
 void receiveDataFromConsole(float* tempData, float* chargeRateData) {
@@ -40,7 +57,6 @@ void receiveDataFromConsole(float* tempData, float* chargeRateData) {
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%f", &chargeRateData[j]);
-        //printf("%.2f \t %.2f\n",tempData[j],chargeRateData[j]);
     }
    
 }
